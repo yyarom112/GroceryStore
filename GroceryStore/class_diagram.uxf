@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>758</x>
+      <y>294</y>
+      <w>76</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>DataAccessLayer::Product
+--
+-barcodeProduct: int
+-productName: String
+-deliveryTime: int
+-storeQuantity: int
+-storeroomQuantity: int
+-supplier: String
+-averageSalesPerDay: double
+-storeLocation: String
+-storeroomLocation: String
+-faultyProductInStore: int
+-faultyProductInStoreroom: int
+-buyPrice: double
+-sellPrice: double
+-categoryID: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>164</y>
+      <w>76</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>InventoryManager
+--
+-instance: InventoryManager
+-categoryManager: CategoryManager
+-productManager: ProductManager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>226</y>
+      <w>120</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>Presentation_Layer::product_menu
+--
+-main_menu: Command_Line_gui
+-cm: category_menu
+-check: checker
+-bl: InventoryManager
+~in: Scanner
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>164</y>
+      <w>76</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>DataAccessLayer::ProductManager
+--
+-instance: ProductManager
+-dataBase: String
+--
+-ProductManager(): ctor
++getProductManager(): ProductManager
+-connect(): Connection
++initialProductTable(): void
++addProductToTable(Product product): boolean
++deleteProduct(Product productToDelete): boolean
++updateProductTable(Product product): void
++getProductByID(int productID): Product
++getListOfId(): int[]
++getMissingProduct(): ArrayList&lt;Product&gt;
++currentProductsInInventory(): int[]
++GetDefectiveProducts(): ArrayList&lt;Product&gt;
++getAllProductOrderByCategory(): ArrayList&lt;Product&gt;
++getProductOfCategory(int categoryID): ArrayList&lt;Product&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>202</x>
+      <y>226</y>
+      <w>122</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>category_menu
+--
+-main_menu: Command_Line_gui
+-pm: product_menu
+-bl: InventoryManager
+-check: checker
+-in: Scanner
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>164</y>
+      <w>86</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>DataAccessLayer::CategoryManager
+--
+-instance: CategoryManager
+-dataBase: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>294</y>
+      <w>92</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>DataAccessLayer::Category
+--
+-categoryID: int
+-topCategoryID: Integer
+-categoryName: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>274</x>
+      <y>164</y>
+      <w>46</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>checker
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>166</x>
+      <y>162</y>
+      <w>54</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>Presentation_Layer::Command_Line_gui
+--
+-in: Scanner
+-pm: product_menu
+-cm: category_menu
+-BL: InventoryManager
+-check: checker
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>104</y>
+      <w>36</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Presentation_Layer::Main
+--
++main(String[] args): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>112</y>
+      <w>14</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+initial &gt;</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>186</y>
+      <w>54</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;150.0;250.0;150.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>186</y>
+      <w>24</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>100.0;200.0;100.0;150.0;10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>172</y>
+      <w>12</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+check
+the
+input</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>156</x>
+      <y>172</y>
+      <w>132</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+check the input</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;240.0;640.0;240.0;640.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>182</y>
+      <w>342</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=-
+process the 
+input from
+menus
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;150.0;1420.0;150.0;1420.0;460.0;1690.0;460.0;1690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>298</x>
+      <y>210</y>
+      <w>6</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>146</y>
+      <w>600</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ 
+send command &gt;
+get data  &lt; 
+
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>2980.0;90.0;2980.0;10.0;480.0;10.0;480.0;640.0;10.0;640.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>794</x>
+      <y>146</y>
+      <w>6</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>796</x>
+      <y>224</y>
+      <w>16</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>lt=-
+manager</panel_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1052</x>
+      <y>180</y>
+      <w>16</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=-
+manager</panel_attributes>
+    <additional_attributes>10.0;570.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

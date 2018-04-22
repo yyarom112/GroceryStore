@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1728</x>
+      <y>240</y>
+      <w>304</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>bl::InventoryManager
+--
+-instance: InventoryManager
+-categoryManager: CategoryManager
+-productManager: ProductManager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>344</x>
+      <y>488</y>
+      <w>480</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Presentation_Layer::product_menu
+--
+-main_menu: Command_Line_gui
+-cm: category_menu
+-check: checker
+-bl: InventoryManager
+~in: Scanner
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3128</x>
+      <y>240</y>
+      <w>304</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>productManager::ProductManager
+--
+-instance: ProductManager
+-dataBase: String
+--
+-ProductManager(): ctor
++getProductManager(): ProductManager
+-connect(): Connection
++initialProductTable(): void
++addProductToTable(Product product): boolean
++deleteProduct(Product productToDelete): boolean
++updateProductTable(Product product): void
++getProductByID(int productID): Product
++getListOfId(): int[]
++getMissingProduct(): ArrayList&lt;Product&gt;
++currentProductsInInventory(): int[]
++GetDefectiveProducts(): ArrayList&lt;Product&gt;
++getAllProductOrderByCategory(): ArrayList&lt;Product&gt;
++getProductOfCategory(int categoryID): ArrayList&lt;Product&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4128</x>
+      <y>240</y>
+      <w>344</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>categoryManager::CategoryManager
+--
+-instance: CategoryManager
+-dataBase: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1184</x>
+      <y>240</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>checker
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>232</y>
+      <w>216</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>clg::Command_Line_gui
+--
+-in: Scanner
+-pm: product_menu
+-cm: category_menu
+-BL: InventoryManager
+-check: checker
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>0</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Presentation_Layer::Main
+--
++main(String[] args): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>32</y>
+      <w>136</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+initial &gt;
+and change the screen</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>328</y>
+      <w>216</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=-
+initial and change the screen</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;150.0;250.0;150.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>272</y>
+      <w>528</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+check the input</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;240.0;640.0;240.0;640.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1944</x>
+      <y>168</y>
+      <w>2400</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ 
+send request to find if top category exists
+return flag if success</panel_attributes>
+    <additional_attributes>2980.0;90.0;2980.0;10.0;480.0;10.0;480.0;640.0;10.0;640.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>664</y>
+      <w>304</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>toInsert::Product
+--
+-barcodeProduct: 3
+-productName: Gouda
+-deliveryTime: 10
+-storeQuantity: 50
+-storeroomQuantity: 30
+-supplier: Tnova
+-averageSalesPerDay: 13
+-storeLocation: row B shelf 2
+-storeroomLocation: row B shelf 4
+-faultyProductInStore: 0
+-faultyProductInStoreroom: 0
+-buyPrice: 10
+-sellPrice: 15
+-categoryID: 5
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>688</y>
+      <w>368</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>cat::Category
+--
+-categoryID: 5
+-topCategoryID: 1
+-categoryName: Cheese
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>584</y>
+      <w>208</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=-
+update a product</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;60.0;240.0;60.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>584</y>
+      <w>128</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+check the valid of
+category</panel_attributes>
+    <additional_attributes>140.0;130.0;140.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>312</y>
+      <w>1088</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ 
+send insert command &gt;
+get status of request  &lt; 
+</panel_attributes>
+    <additional_attributes>1340.0;10.0;1340.0;420.0;10.0;420.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>312</y>
+      <w>928</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ 
+init
+</panel_attributes>
+    <additional_attributes>1140.0;10.0;1140.0;100.0;10.0;100.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1872</x>
+      <y>192</y>
+      <w>1472</w>
+      <h>776</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ 
+
+send update request 
+return flag if success</panel_attributes>
+    <additional_attributes>1820.0;60.0;1820.0;10.0;960.0;10.0;960.0;950.0;10.0;950.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>
